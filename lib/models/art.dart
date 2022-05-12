@@ -1,6 +1,3 @@
-import './artist.dart';
-import './museum.dart';
-
 class Art {
   double id;
   String imagem;

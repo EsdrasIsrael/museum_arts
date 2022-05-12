@@ -19,12 +19,12 @@ class MuseuRepository {
       id: 10, 
       localizacao: "Cairo, Egito"),
     Museu(
-      nome: "European Sculpture and Decorative Arts", 
-      id: 12, 
-      localizacao: "Nova York, Estados Unidos"),
-    Museu(
       nome: "Drawings and Prints", 
       id: 9, 
+      localizacao: "Nova York, Estados Unidos"),
+    Museu(
+      nome: "European Paintings", 
+      id: 11, 
       localizacao: "Nova York, Estados Unidos"),
   ];
 }

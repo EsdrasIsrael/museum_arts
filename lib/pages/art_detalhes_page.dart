@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:museum_arts/models/art.dart';
-import 'package:museum_arts/models/museum.dart';
 import 'package:museum_arts/pages/artist_detalhes_page.dart';
-import 'package:museum_arts/repositories/arts_repository.dart';
 
 class ArtsDetalhesPage extends StatefulWidget {
 
@@ -45,11 +43,14 @@ class _ArtsDetalhesPage extends State<ArtsDetalhesPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Text(widget.art.title, style: TextStyle(color: Colors.white,fontSize: 20,),),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                child: SizedBox(
-                  height: 250,
-                  child: Image.asset(widget.art.imagem),
+              Container(
+                width: 200,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  child: SizedBox(
+                    height: 250,
+                    child: Image.asset(widget.art.imagem),
+                  ),
                 ),
               ),
               

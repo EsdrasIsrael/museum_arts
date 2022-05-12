@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:museum_arts/models/museum.dart';
 import 'package:museum_arts/pages/arts_page.dart';
 import 'package:museum_arts/repositories/museum_repository.dart';
-import 'package:intl/intl.dart';
 
 class MuseumsPage extends StatefulWidget {
   const MuseumsPage({ Key? key }) : super(key: key);
@@ -25,20 +24,19 @@ class _MuseumsPageState extends State<MuseumsPage> {
   @override
   Widget build(BuildContext context) {
 
-    final tabela = MuseuRepository.tabela;
+  final tabela = MuseuRepository.tabela;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Museus e Departamentos", style: TextStyle(color: Colors.white,),),
-      ),
-      body: ListView.separated(   
+    Widget buildList() => ListView.separated(
+        padding: EdgeInsets.all(16),
+        separatorBuilder: (__,___) => Divider(), 
+        itemCount: tabela.length,   
         itemBuilder: (BuildContext context, int museu){
           return ListTile(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
             tileColor: Colors.brown[700],
-            selected: false,
             leading: const Icon(Icons.account_balance_rounded, color: Colors.white,),
             title: Text(tabela[museu].nome, style: TextStyle(color: Colors.white,fontSize: 16,)),
+            subtitle: Text(tabela[museu].localizacao, style: TextStyle(color: Colors.brown[300],)),
             trailing: IconButton(
                         icon: const Icon(Icons.navigate_next_rounded,color: Colors.white,),
                         onPressed: () => telaArts(tabela[museu]), 
@@ -46,9 +44,13 @@ class _MuseumsPageState extends State<MuseumsPage> {
             
           );
         }, 
-        padding: EdgeInsets.all(16),
-        separatorBuilder: (__,___) => Divider(), 
-        itemCount: tabela.length,),
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Museus e Departamentos", style: TextStyle(color: Colors.white,),),
+      ),
+      body: buildList(),
     );
   }
 }

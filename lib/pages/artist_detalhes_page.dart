@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:museum_arts/models/art.dart';
 import 'package:museum_arts/models/artist.dart';
-import 'package:museum_arts/models/museum.dart';
 import 'package:museum_arts/repositories/artists_repository.dart';
-import 'package:museum_arts/repositories/arts_repository.dart';
 
 class ArtistDetalhesPage extends StatefulWidget {
 
