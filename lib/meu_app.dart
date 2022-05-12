@@ -13,7 +13,7 @@ class MeuApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.brown,
-        fontFamily: "Abygaer"
+        fontFamily: "PlayfairDisplay"
       ),
       home: MuseumsPage(),
     );

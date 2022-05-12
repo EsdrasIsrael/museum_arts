@@ -5,9 +5,9 @@ class Art {
   double id;
   String imagem;
   String title;
-  Artist artista;
+  String nomeArtista;
   String periodo;
-  Museu museu;
+  String nomeMuseu;
   String cultura;
   String colecao;
 
@@ -15,9 +15,9 @@ class Art {
     required this.id,
     required this.imagem,
     required this.title,
-    required this.artista,
+    required this.nomeArtista,
     required this.periodo,
-    required this.museu,
+    required this.nomeMuseu,
     required this.cultura,
     required this.colecao,
   });
